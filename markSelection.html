@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Selection</title>
+    <style>
+        .highlight {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <p>Hello World how are you doing bla bla</p>
+
+
+    <button onclick="render()">Render</button>
+    <script>
+
+        const p = document.querySelector("p")
+
+        var str = p.innerHTML;
+
+        str = str.substring(0, 12) +
+            `<span class='highlight'>${str.substring(12, 12 + 5)}</span>${str.substring(12+5, str.length)}`
+
+        p.innerHTML = str;
+
+        function render() {
+            console.log(window.getSelection().toString());
+        }
+
+    </script>
+
+</body>
+
+</html>

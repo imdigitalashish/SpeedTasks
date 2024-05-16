@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .dice_scene {
+            position: absolute;
+            perspective: 600px;
+            perspective-origin: center center;
+
+
+        }
+
+        .dice {
+            position: absolute;
+            transform-style: preserve-3d;
+
+            animation: rotateDice 3s linear 0s infinite forwards paused;
+
+
+        }
+
+        body:active .dice {
+            animation: rotateDice 3s linear 0s infinite forwards;
+
+
+        }
+
+        @keyframes rotateDice {
+            from {}
+
+            to {
+                transform: rotateY(360deg) rotateX(360deg);
+            }
+        }
+
+        .dice_face {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        .dice_face:nth-child(1) {
+            background: rgba(255, 0, 0, 0.6);
+
+        }
+
+        .dice_face:nth-child(2) {
+            background-color: rgba(0, 255, 0, 0.6);
+            transform: translateZ(100px);
+        }
+
+        .dice_face:nth-child(3) {
+            background-color: rgba(0, 0, 255, 0.6);
+            transform: rotateY(90deg) translateX(-50px) translateZ(50px);
+        }
+
+        .dice_face:nth-child(4) {
+            background-color: rgba(0, 255, 255, 0.6);
+            transform: rotateY(90deg) translateX(-50px) translateZ(-50px);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="dice_scene">
+
+        <div class="dice">
+            <div class="dice_face"></div>
+            <div class="dice_face"></div>
+            <div class="dice_face"></div>
+            <div class="dice_face"></div>
+            <div class="dice_face"></div>
+            <div class="dice_face"></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

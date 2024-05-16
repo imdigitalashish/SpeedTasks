@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+
+    <style>
+
+        .todoListItem {
+            display: flex;
+        }
+
+        input[type="checkbox"]:checked + p {
+            text-decoration: line-through;
+        }
+
+        .todoListItem:nth-child(n+3) {
+            background: green;
+        }
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="todoListItem">
+        <input type="checkbox">
+        <p>Item 1</p>
+    </div>
+
+    <div class="todoListItem">
+        <input type="checkbox">
+        <p>Item 1</p>
+    </div>
+
+
+    <div class="todoListItem">
+        <input type="checkbox">
+        <p>Item 1</p>
+    </div>
+
+
+    <div class="todoListItem">
+        <input type="checkbox">
+        <p>Item 1</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Counter</title>
+    <style>
+
+        .singleCount {
+            counter-reset: counter_prop;
+        }
+
+
+        #click_2:checked {
+            counter-increment: counter_prop 2;
+        }
+
+        #click_2:checked + label{
+            background: red;
+        }
+
+        .count_prop::after {
+            content: counter(counter_prop);
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="singleCount">
+        <input type="checkbox" id="click_2">
+        <label for="click_2">1</label>
+    </div>
+
+
+
+
+    <div class="count_prop"></div>
+
+</body>
+
+</html>

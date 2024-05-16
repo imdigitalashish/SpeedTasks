@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flix</title>
+    <style>
+        body {
+            display: flex;
+        }
+
+        .dragBox2 {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dragBox1">
+        <div class="dragElement" draggable="true">
+            <p>Hello 1</p>
+        </div>
+        <div class="dragElement" draggable="true">
+            <p>Hello 2</p>
+        </div>
+        <div class="dragElement" draggable="true">
+            <p>Hello 3</p>
+        </div>
+        <div class="dragElement" draggable="true">
+            <p>Hello 4</p>
+        </div>
+    </div>
+
+    <div class="dragBox2"></div>
+
+    <script>
+
+        let _ = (q) => document.querySelector(q);
+        let lists = document.querySelectorAll(".dragElement");
+
+        let rightBox = _(".dragBox1");
+        let leftBox = _(".dragBox2");
+
+        for (list of lists) {
+            list.addEventListener("dragstart", (e) => {
+                let selected = e.target
+
+                leftBox.addEventListener("dragover", (e) => {
+                    e.preventDefault();
+
+                });
+
+                leftBox.addEventListener("drop", (e) => {
+                    if (selected != null) {
+
+                        leftBox.append(selected);
+                        selected = null;
+                    }
+                })
+
+                rightBox.addEventListener("dragover", (e) => {
+                    e.preventDefault();
+
+                });
+
+                rightBox.addEventListener("drop", (e) => {
+                    if (selected != null) {
+                        rightBox.append(selected);
+                        selected = null;
+                    }
+
+                })
+
+
+            })
+        }
+
+
+    </script>
+
+</body>
+
+</html>

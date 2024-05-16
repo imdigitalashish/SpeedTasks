@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spining Globe</title>
+
+    <style>
+        .earth {
+            background: url("https://cdn.britannica.com/37/245037-050-79129D52/world-map-continents-oceans.jpg");
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            border-radius: 100%;
+            background-position: 0% 0;
+            animation: animateGlobe 3s linear 0s infinite forwards;
+            transform: rotateZ(20deg);
+            box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes animateGlobe {
+            from {
+
+            }
+            to {
+                background-position: 200% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="earth">
+
+    </div>
+    
+</body>
+</html>
